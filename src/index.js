@@ -1,12 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import GlobalStyles from "./styles/reset.js";
-import Home from "./pages/Home";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import GlobalStyles from './styles/reset.js';
+import Home from './pages/Home';
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
     <Home />
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );

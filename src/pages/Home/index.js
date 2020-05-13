@@ -1,15 +1,12 @@
 import React from 'react';
-import { Div } from './styles';
 import Container from '../../containers/Container';
-import Title from '../../components/Title';
+import Header from '../../containers/Header';
 
 class Home extends React.Component {
   render() {
     return (
       <Container>
-        <Div>
-          <Title>Home</Title>
-        </Div>
+        <Header />
       </Container>
     );
   }
