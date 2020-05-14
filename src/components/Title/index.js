@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import React from 'react';
+import { H1 } from './style';
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: #999;
-  font-family: "Comfortaa", sans-serif;
-`;
+class Title extends React.Component {
+  render() {
+    return <H1>{this.props.title}</H1>;
+  }
+}
 
 export default Title;

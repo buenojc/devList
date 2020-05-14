@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Div = styled.div`
-  width: 100%;
+export const P = styled.p`
+  font-family: 'Roboto', sans-serif;
   text-align: center;
+  margin-top: 10px;
+  color: #fff;
 `;
