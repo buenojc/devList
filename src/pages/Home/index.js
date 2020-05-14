@@ -4,6 +4,12 @@ import Header from '../../containers/Header';
 import MainWrapper from '../../containers/MainWrapper';
 import Title from '../../components/Title';
 import { P } from './styles';
+import Form from '../../components/Form';
+
+function alert(e) {
+  e.preventDefault();
+  console.log('Funciona');
+}
 
 class Home extends React.Component {
   render() {
@@ -13,6 +19,13 @@ class Home extends React.Component {
         <MainWrapper>
           <Title title='Liste os repositórios e informações de qualquer usuário do Github' />
           <P>Veja o perfil, contato e respositórios</P>
+
+          <Form
+            label='Escreva o nome do usuário'
+            placeholder='ex: mestreYoda'
+            submit={(e) => alert(e)}
+            btn='Pesquisar'
+          />
         </MainWrapper>
       </ContentWrapper>
     );
