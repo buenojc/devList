@@ -6,6 +6,7 @@ const ContentWrapper = styled.div`
   position: absolute;
   background-color: #363636;
   padding-bottom: 100px;
+  font-family: 'Roboto', sans-serif;
 `;
 
 export default ContentWrapper;

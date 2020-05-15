@@ -17,7 +17,10 @@ class Home extends React.Component {
       <ContentWrapper>
         <Header />
         <MainWrapper>
-          <Title title='Liste os repositórios e informações de qualquer usuário do Github' />
+          <Title
+            marginTop={100}
+            title='Liste os repositórios e informações de qualquer usuário do Github'
+          />
           <P>Veja o perfil, contato e respositórios</P>
 
           <Form
