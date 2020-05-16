@@ -5,7 +5,7 @@ class StatsBadge extends React.Component {
   render() {
     return (
       <Wrapper>
-        <span>{this.props.icon}</span>
+        {this.props.icon}
         <Value>{this.props.value}</Value>
       </Wrapper>
     );

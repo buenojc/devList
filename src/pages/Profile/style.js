@@ -24,10 +24,11 @@ export const AvatarImg = styled.img`
 `;
 
 export const BadgeContainer = styled.div`
-  width: 160px;
+  min-width: 160px;
   margin: 15px auto 0;
   display: flex;
-  justify-items: center;
+  column-gap: 10px;
+  justify-content: center;
 `;
 
 export const Bio = styled.p`

@@ -2,27 +2,25 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   background-color: #00938a;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border-radius: 10px;
   color: white;
   display: flex;
-  margin: 0 auto;
-  width: 60px;
+  min-width: 70px;
+  column-gap: 5px;
   align-items: center;
   justify-content: center;
-
-  span {
-    width: 500px;
-    overflow: hidden;
-  }
+  box-sizing: border-box;
 
   svg {
-    width: 80%;
-    box-sizing: border-box;
+    min-width: 20px;
+    min-height: 20px;
   }
 `;
 
 export const Value = styled.p`
+  display: block;
+  min-width: 50%;
   font-size: 14px;
   margin-top: 0;
   font-weight: bold;

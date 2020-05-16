@@ -30,8 +30,8 @@ class Profile extends React.Component {
           <Email>buenojc@outlook.com</Email>
 
           <BadgeContainer>
-            <StatsBadge value={10} icon={<FaUsers />} />
-            <StatsBadge value={5} icon={<FaUserPlus />} />
+            <StatsBadge value={1} icon={<FaUsers />} />
+            <StatsBadge value={1} icon={<FaUserPlus />} />
           </BadgeContainer>
 
           <Bio>
