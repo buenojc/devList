@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
 import MainWrapper from '../../containers/MainWrapper';

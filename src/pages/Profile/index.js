@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
 import Avatar from '../../avatar.jpeg';
@@ -42,7 +43,9 @@ class Profile extends React.Component {
           </Bio>
 
           <Button text='Veja todos os repositórios' />
-          <Search />
+          <Link to='/'>
+            <Search />
+          </Link>
         </MainWrapper>
       </ContentWrapper>
     );
