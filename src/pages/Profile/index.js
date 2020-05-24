@@ -7,7 +7,7 @@ import Title from '../../components/Title';
 import StatsBadge from '../../components/StatsBadge';
 import { FaUsers, FaUserPlus } from 'react-icons/fa';
 import Button from '../../components/Button';
-import Search from '../../components/Search';
+import SearchBtn from '../../components/SearchBtn';
 import {
   ImgWrapper,
   AvatarImg,
@@ -44,7 +44,7 @@ class Profile extends React.Component {
 
           <Button text='Veja todos os repositórios' />
           <Link to='/'>
-            <Search />
+            <SearchBtn />
           </Link>
         </MainWrapper>
       </ContentWrapper>

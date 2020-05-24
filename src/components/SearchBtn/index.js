@@ -2,7 +2,7 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { Wrapper } from './style';
 
-class Search extends React.Component {
+class SearchBtn extends React.Component {
   render() {
     return (
       <Wrapper>
@@ -12,4 +12,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default SearchBtn;
