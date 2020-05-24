@@ -22,7 +22,7 @@ class Home extends React.Component {
             marginTop={100}
             title='Liste os repositórios e informações de qualquer usuário do Github'
           />
-          <P>Veja o perfil, contato e respositórios</P>
+          <P>Veja o perfil, contato e repositórios</P>
 
           <Form
             label='Escreva o nome do usuário'

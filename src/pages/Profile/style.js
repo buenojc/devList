@@ -27,8 +27,11 @@ export const BadgeContainer = styled.div`
   min-width: 160px;
   margin: 15px auto 0;
   display: flex;
-  column-gap: 10px;
   justify-content: center;
+
+  div + div {
+    margin-left: 15px;
+  }
 `;
 
 export const Bio = styled.p`
