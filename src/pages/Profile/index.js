@@ -42,7 +42,9 @@ class Profile extends React.Component {
             dolor voluptatum porro!
           </Bio>
 
-          <Button text='Veja todos os repositórios' />
+          <Link to='/repositories'>
+            <Button text='Veja todos os repositórios' />
+          </Link>
           <Link to='/'>
             <SearchBtn />
           </Link>

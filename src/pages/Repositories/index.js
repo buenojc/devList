@@ -4,6 +4,7 @@ import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
 import MainWrapper from '../../containers/MainWrapper';
 import RepositoryHeader from '../../components/RepositoryHeader';
+import Dropdown from '../../components/Dropdown';
 import SearchBtn from '../../components/SearchBtn';
 import ReturnBtn from '../../components/ReturnBtn';
 
@@ -17,7 +18,7 @@ class Repositories extends Component {
             <ListHeader>
               <h1>Todos os repositórios de @buenojc</h1>
               <Ordination>
-                <p>Ordenar por estrelas</p>
+                <Dropdown />
               </Ordination>
             </ListHeader>
             <ol>
