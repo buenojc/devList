@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
 import Avatar from '../../avatar.jpeg';
 import Title from '../../components/Title';
 import StatsBadge from '../../components/StatsBadge';
-import { FaUsers, FaUserPlus } from 'react-icons/fa';
-import Button from '../../components/Button';
+import { FiUsers, FiUserPlus } from 'react-icons/fi';
+import { NavigationWrapper } from '../../containers/NavigationWrapper';
+import LinkBtn from '../../components/LinkBtn';
 import SearchBtn from '../../components/SearchBtn';
 import {
   ImgWrapper,
@@ -31,8 +31,8 @@ class Profile extends React.Component {
           <Email>buenojc@outlook.com</Email>
 
           <BadgeContainer>
-            <StatsBadge value={1} icon={<FaUsers />} />
-            <StatsBadge value={1} icon={<FaUserPlus />} />
+            <StatsBadge value={1} icon={<FiUsers />} />
+            <StatsBadge value={1} icon={<FiUserPlus />} />
           </BadgeContainer>
 
           <Bio>
@@ -42,12 +42,10 @@ class Profile extends React.Component {
             dolor voluptatum porro!
           </Bio>
 
-          <Link to='/repositories'>
-            <Button text='Veja todos os repositórios' />
-          </Link>
-          <Link to='/'>
+          <LinkBtn url='/repositories' text='Veja todos os repositórios' />
+          <NavigationWrapper>
             <SearchBtn />
-          </Link>
+          </NavigationWrapper>
         </MainWrapper>
       </ContentWrapper>
     );

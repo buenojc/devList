@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ListWrapper = styled.div`
   margin: 50px auto 0;
-  width: 50%;
+  width: 70%;
   text-align: center;
   border: 1px solid #00938a;
   border-radius: 15px;
@@ -42,12 +42,4 @@ export const Ordination = styled.div`
     font-size: 12px;
     font-weight: bold;
   }
-`;
-
-export const BtnWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 120px;
-  margin: 40px auto 0;
 `;

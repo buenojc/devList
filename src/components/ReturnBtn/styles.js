@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px auto 0;
+  margin: 30px 0;
   cursor: pointer;
 
   &:hover {
