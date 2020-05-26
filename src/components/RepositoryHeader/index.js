@@ -1,18 +1,27 @@
 import React from 'react';
-import { Item, Name } from './styles';
+import { Link } from 'react-router-dom';
+import { Item, Name, NameWrapper, InfoWrapper } from './styles';
 import StatsBadge from '../StatsBadge';
-import { FaStar } from 'react-icons/fa';
+import { FiStar, FiGithub } from 'react-icons/fi';
 
 class Repository extends React.Component {
   render() {
     return (
       <Item>
-        <Name>{this.props.repositoryName}</Name>
-        <div>
-          <a href='#'>Ver no Github</a>
-          <StatsBadge value={this.props.value} icon={<FaStar />} />
+        <NameWrapper>
+          <a href={this.props.github} target='_blank'>
+            <StatsBadge icon={<FiGithub size={25} color='white' />} />
+          </a>
+          <Name>{this.props.repositoryName}</Name>
+        </NameWrapper>
+        <InfoWrapper>
+          <StatsBadge value={this.props.value} icon={<FiStar />} />
           <StatsBadge value={this.props.language} />
-        </div>
+
+          <Link to={this.props.details}>
+            <p>Ver mais</p>
+          </Link>
+        </InfoWrapper>
       </Item>
     );
   }

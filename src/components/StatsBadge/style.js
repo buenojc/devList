@@ -6,8 +6,6 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   color: white;
   display: flex;
-  min-width: 70px;
-  column-gap: 5px;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -16,12 +14,15 @@ export const Wrapper = styled.div`
     min-width: 20px;
     min-height: 20px;
   }
+
+  svg + p {
+    margin-left: 5px;
+  }
 `;
 
 export const Value = styled.p`
-  display: block;
-  min-width: 50%;
-  font-size: 14px;
-  margin-top: 0;
   font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 3px;
 `;
