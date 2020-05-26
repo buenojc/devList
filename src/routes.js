@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Repositories from './pages/Repositories';
+import Details from './pages/Details';
 
 class Routes extends Component {
   render() {
@@ -12,6 +13,7 @@ class Routes extends Component {
           <Route path='/' exact component={Home} />
           <Route path='/profile' component={Profile} />
           <Route path='/repositories' component={Repositories} />
+          <Route path='/details' component={Details} />
         </Switch>
       </BrowserRouter>
     );
