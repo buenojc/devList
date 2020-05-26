@@ -1,6 +1,5 @@
 import React from 'react';
-import { FormWrapper, Input, Label } from './style';
-import Button from '../Button';
+import { FormWrapper, Input, Label, Btn } from './style';
 
 class Form extends React.Component {
   render() {
@@ -8,7 +7,7 @@ class Form extends React.Component {
       <FormWrapper onSubmit={this.props.submit}>
         <Label>{this.props.label}</Label>
         <Input type='text' placeholder={this.props.placeholder} />
-        <Button type='submit' text={this.props.btn} />
+        <Btn type='submit'>Pesquisar</Btn>
       </FormWrapper>
     );
   }
