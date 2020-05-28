@@ -2,7 +2,6 @@ import React from 'react';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
 import Avatar from '../../avatar.jpeg';
-import Title from '../../components/Title';
 import StatsBadge from '../../components/StatsBadge';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 import { NavigationWrapper } from '../../containers/NavigationWrapper';
@@ -10,11 +9,11 @@ import LinkBtn from '../../components/LinkBtn';
 import SearchBtn from '../../components/SearchBtn';
 import {
   ImgWrapper,
+  InfoWrapper,
   AvatarImg,
   MainWrapper,
   BadgeContainer,
   Bio,
-  Email,
 } from './style';
 
 class Profile extends React.Component {
@@ -27,8 +26,10 @@ class Profile extends React.Component {
             <AvatarImg src={Avatar} alt='Imagem de perfil' />
           </ImgWrapper>
 
-          <Title marginTop={20} title='@buenojc' />
-          <Email>buenojc@outlook.com</Email>
+          <InfoWrapper>
+            <h1>@buenojc</h1>
+            <p>buenojc@outlook.com</p>
+          </InfoWrapper>
 
           <BadgeContainer>
             <StatsBadge value={1} icon={<FiUsers />} />
