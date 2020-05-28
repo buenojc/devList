@@ -5,7 +5,7 @@ const ContentWrapper = styled.div`
   min-height: 100vh;
   position: absolute;
   background-color: #363636;
-  padding-bottom: 100px;
+  padding-bottom: 30px;
   font-family: 'Roboto', sans-serif;
 `;
 

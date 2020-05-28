@@ -3,8 +3,7 @@ import { useHistory } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
 import MainWrapper from '../../containers/MainWrapper';
-import Title from '../../components/Title';
-import { P } from './styles';
+import { Title } from './styles';
 import Form from '../../components/Form';
 
 function Home() {
@@ -18,11 +17,12 @@ function Home() {
     <ContentWrapper>
       <Header />
       <MainWrapper>
-        <Title
-          marginTop={100}
-          title='Liste os repositórios e informações de qualquer usuário do Github'
-        />
-        <P>Veja o perfil, contato e repositórios</P>
+        <Title>
+          <h1>
+            Liste os repositórios e informações de qualquer usuário do Github
+          </h1>
+          <p>Veja o perfil, contato e repositórios</p>
+        </Title>
 
         <Form
           label='Escreva o nome do usuário'

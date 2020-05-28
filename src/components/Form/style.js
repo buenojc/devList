@@ -19,6 +19,14 @@ export const Input = styled.input`
     opacity: 1;
     color: #00938a;
   }
+
+  @media (max-width: 1200px) {
+    width: 50%;
+  }
+
+  @media (max-width: 800px) {
+    width: 80%;
+  }
 `;
 
 export const Label = styled.p`
