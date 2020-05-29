@@ -8,6 +8,7 @@ export const Title = styled.div`
     color: #fff;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    padding: 0 5px;
 
     @media (max-width: 550px) {
       margin-top: 60px;

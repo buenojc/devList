@@ -37,6 +37,10 @@ export const Wrapper = styled.ul`
     &:hover {
       display: block;
     }
+
+    @media (max-width: 500px) {
+      right: 0;
+    }
   }
 
   &:hover div {

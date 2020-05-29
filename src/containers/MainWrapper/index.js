@@ -4,7 +4,7 @@ const MainWrapper = styled.main`
   max-width: 80%;
   margin: 0 auto;
 
-  @media (max-width: 540px) {
+  @media (max-width: 700px) {
     max-width: 95%;
   }
 `;

@@ -8,13 +8,30 @@ export const ListWrapper = styled.div`
   border-radius: 15px;
 
   ol {
-    div + div {
+    div > div + div {
       margin-left: 15px;
+
+      @media (max-width: 900px) {
+        margin-left: 10px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
     }
   }
 
   & li:last-child {
     border: none;
+  }
+
+  @media (max-width: 1300px) {
+    width: 100%;
   }
 `;
 
@@ -31,6 +48,15 @@ export const ListHeader = styled.div`
     font-size: 18px;
     margin-right: auto;
   }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      margin-right: 0;
+    }
+  }
 `;
 
 export const Ordination = styled.div`
@@ -41,5 +67,14 @@ export const Ordination = styled.div`
   p {
     font-size: 12px;
     font-weight: bold;
+  }
+
+  @media (max-width: 500px) {
+    margin-left: 0;
+    margin-top: 20px;
+
+    p {
+      text-align: center;
+    }
   }
 `;
