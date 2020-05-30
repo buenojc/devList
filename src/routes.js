@@ -6,20 +6,16 @@ import Profile from './pages/Profile';
 import Repositories from './pages/Repositories';
 import Details from './pages/Details';
 
-class Routes extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <ScrollToTop />
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/repositories' component={Repositories} />
-          <Route path='/details' component={Details} />
-        </Switch>
-      </BrowserRouter>
-    );
-  }
+export default function Routes() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/profile' component={Profile} />
+        <Route path='/repositories' component={Repositories} />
+        <Route path='/details' component={Details} />
+      </Switch>
+    </BrowserRouter>
+  );
 }
-
-export default Routes;

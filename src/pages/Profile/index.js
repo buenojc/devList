@@ -16,41 +16,37 @@ import {
   Bio,
 } from './style';
 
-class Profile extends React.Component {
-  render() {
-    return (
-      <ContentWrapper>
-        <Header />
-        <MainWrapper>
-          <ImgWrapper>
-            <AvatarImg src={Avatar} alt='Imagem de perfil' />
-          </ImgWrapper>
+export default function Profile() {
+  return (
+    <ContentWrapper>
+      <Header />
+      <MainWrapper>
+        <ImgWrapper>
+          <AvatarImg src={Avatar} alt='Imagem de perfil' />
+        </ImgWrapper>
 
-          <InfoWrapper>
-            <h1>@buenojc</h1>
-            <p>buenojc@outlook.com</p>
-          </InfoWrapper>
+        <InfoWrapper>
+          <h1>@buenojc</h1>
+          <p>buenojc@outlook.com</p>
+        </InfoWrapper>
 
-          <BadgeContainer>
-            <StatsBadge value={1} icon={<FiUsers />} />
-            <StatsBadge value={1} icon={<FiUserPlus />} />
-          </BadgeContainer>
+        <BadgeContainer>
+          <StatsBadge value={1} icon={<FiUsers />} />
+          <StatsBadge value={1} icon={<FiUserPlus />} />
+        </BadgeContainer>
 
-          <Bio>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi libero
-            architecto hic recusandae aut reiciendis commodi adipisci iste
-            debitis, excepturi vel unde minus enim laboriosam voluptas sunt
-            dolor voluptatum porro!
-          </Bio>
+        <Bio>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi libero
+          architecto hic recusandae aut reiciendis commodi adipisci iste
+          debitis, excepturi vel unde minus enim laboriosam voluptas sunt dolor
+          voluptatum porro!
+        </Bio>
 
-          <LinkBtn url='/repositories' text='Veja todos os repositórios' />
-          <NavigationWrapper>
-            <SearchBtn />
-          </NavigationWrapper>
-        </MainWrapper>
-      </ContentWrapper>
-    );
-  }
+        <LinkBtn url='/repositories' text='Veja todos os repositórios' />
+        <NavigationWrapper>
+          <SearchBtn />
+        </NavigationWrapper>
+      </MainWrapper>
+    </ContentWrapper>
+  );
 }
-
-export default Profile;

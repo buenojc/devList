@@ -6,7 +6,7 @@ import MainWrapper from '../../containers/MainWrapper';
 import { Title } from './styles';
 import Form from '../../components/Form';
 
-function Home() {
+export default function Home() {
   const navigation = useHistory();
   function alert(e) {
     e.preventDefault();
@@ -33,5 +33,3 @@ function Home() {
     </ContentWrapper>
   );
 }
-
-export default Home;
