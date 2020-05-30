@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
@@ -8,9 +8,11 @@ import Form from '../../components/Form';
 
 export default function Home() {
   const navigation = useHistory();
-  function alert(e) {
+  const [id, setId] = useState('');
+
+  async function getId(e) {
     e.preventDefault();
-    navigation.push('/profile');
+    navigation.push(`/profile/${id}`);
   }
 
   return (
@@ -27,7 +29,8 @@ export default function Home() {
         <Form
           label='Escreva o nome do usuário'
           placeholder='ex: mestreYoda'
-          submit={(e) => alert(e)}
+          change={(e) => setId(e.target.value)}
+          submit={getId}
         />
       </MainWrapper>
     </ContentWrapper>

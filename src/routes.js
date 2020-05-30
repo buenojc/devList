@@ -12,7 +12,7 @@ export default function Routes() {
       <ScrollToTop />
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/profile' component={Profile} />
+        <Route path='/profile/:id' component={Profile} />
         <Route path='/repositories' component={Repositories} />
         <Route path='/details' component={Details} />
       </Switch>
