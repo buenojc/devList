@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 40%;
+  width: 70%;
   margin: 60px auto 0;
   color: #fff;
 
@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 
   & > p {
     margin-bottom: 60px;
+    text-align: justify;
   }
 
   & > a {
@@ -30,6 +31,10 @@ export const Wrapper = styled.div`
       opacity: 0.5;
     }
   }
+
+  @media (max-width: 900px) {
+    width: 90%;
+  }
 `;
 
 export const Title = styled.div`
@@ -43,6 +48,11 @@ export const Title = styled.div`
   div {
     display: flex;
   }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    border: none;
+  }
 `;
 
 export const Name = styled.p`
@@ -50,4 +60,8 @@ export const Name = styled.p`
   font-weight: bold;
   font-size: 26px;
   text-align: justify;
+
+  @media (max-width: 900px) {
+    margin-bottom: 30px;
+  }
 `;
