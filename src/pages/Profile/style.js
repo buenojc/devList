@@ -60,7 +60,7 @@ export const BadgeContainer = styled.div`
 
 export const Bio = styled.p`
   width: 60%;
-  text-align: justify;
+  text-align: center;
   margin: 50px auto;
   line-height: 23px;
 
