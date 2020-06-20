@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
-import Avatar from '../../avatar.jpeg';
+// import Avatar from '../../avatar.jpeg';
 import StatsBadge from '../../components/StatsBadge';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 import { NavigationWrapper } from '../../containers/NavigationWrapper';
@@ -17,32 +19,51 @@ import {
 } from './style';
 
 export default function Profile() {
+  const [name, setName] = useState('');
+  const [user, setUser] = useState('');
+  const [followers, setfollowers] = useState('');
+  const [following, setFollowing] = useState('');
+  const [avatar, setAvatar] = useState('');
+  const [bio, setBio] = useState('');
+
+  const { id } = useParams();
+
+  async function getUser() {
+    await axios.get(`https://api.github.com/users/${id}`).then((response) => {
+      setName(response.data.name);
+      setUser(response.data.login);
+      setfollowers(response.data.followers);
+      setFollowing(response.data.following);
+      setAvatar(response.data.avatar_url);
+      setBio(response.data.bio);
+    });
+  }
+  getUser();
+
   return (
     <ContentWrapper>
       <Header />
       <MainWrapper>
         <ImgWrapper>
-          <AvatarImg src={Avatar} alt='Imagem de perfil' />
+          <AvatarImg src={avatar} alt='Imagem de perfil' />
         </ImgWrapper>
 
         <InfoWrapper>
-          <h1>@buenojc</h1>
-          <p>buenojc@outlook.com</p>
+          <h1>{name}</h1>
+          <p>{user}</p>
         </InfoWrapper>
 
         <BadgeContainer>
-          <StatsBadge value={1} icon={<FiUsers />} />
-          <StatsBadge value={1} icon={<FiUserPlus />} />
+          <StatsBadge value={followers} icon={<FiUsers />} />
+          <StatsBadge value={following} icon={<FiUserPlus />} />
         </BadgeContainer>
 
-        <Bio>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi libero
-          architecto hic recusandae aut reiciendis commodi adipisci iste
-          debitis, excepturi vel unde minus enim laboriosam voluptas sunt dolor
-          voluptatum porro!
-        </Bio>
+        <Bio>{bio}</Bio>
 
-        <LinkBtn url='/repositories' text='Veja todos os repositórios' />
+        <LinkBtn
+          url={`/repositories/${id}`}
+          text='Veja todos os repositórios'
+        />
         <NavigationWrapper>
           <SearchBtn />
         </NavigationWrapper>

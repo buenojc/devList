@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { useParams } from 'react-router-dom';
 import { ListWrapper, ListHeader, Ordination } from './styles';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
@@ -10,13 +11,15 @@ import SearchBtn from '../../components/SearchBtn';
 import ReturnBtn from '../../components/ReturnBtn';
 
 export default function Repositories() {
+  const { id } = useParams();
+
   return (
     <ContentWrapper>
       <Header />
       <MainWrapper>
         <ListWrapper>
           <ListHeader>
-            <h1>Todos os repositórios de @buenojc</h1>
+            <h1>Todos os repositórios de {id}</h1>
             <Ordination>
               <Dropdown />
             </Ordination>
