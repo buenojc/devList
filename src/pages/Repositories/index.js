@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { ListWrapper, ListHeader, Ordination } from './styles';
 import ContentWrapper from '../../containers/ContentWrapper';
@@ -11,7 +12,22 @@ import SearchBtn from '../../components/SearchBtn';
 import ReturnBtn from '../../components/ReturnBtn';
 
 export default function Repositories() {
+  const [repoList, setRepoList] = useState([]);
+  const [repoName, setRepoName] = useState('');
   const { id } = useParams();
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(
+        ` https://api.github.com/users/${id}/repos`
+      );
+      setRepoList(response.data);
+
+      return;
+    }
+
+    fetchData();
+  }, [id]);
 
   return (
     <ContentWrapper>
@@ -25,25 +41,16 @@ export default function Repositories() {
             </Ordination>
           </ListHeader>
           <ol>
-            <RepositoryHeader
-              github='http://github.com'
-              details='/details'
-              repositoryName='Projeto 1'
-              value='1'
-              language='Javascript'
-            />
-            <RepositoryHeader
-              details='/details'
-              repositoryName='Projeto 2'
-              value='50'
-              language='C++'
-            />
-            <RepositoryHeader
-              details='/details'
-              repositoryName='Projeto 3'
-              value='1'
-              language='Java'
-            />
+            <h2>{repoName}</h2>
+            {repoList.map((repo) => (
+              <RepositoryHeader
+                github={repo.html_url}
+                details={`/details/${repo.name}`}
+                repositoryName={repo.name}
+                language={repo.language}
+                value={repo.stargazers_count}
+              />
+            ))}
           </ol>
         </ListWrapper>
         <NavigationWrapper>
