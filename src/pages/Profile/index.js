@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
-// import Avatar from '../../avatar.jpeg';
 import StatsBadge from '../../components/StatsBadge';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 import { NavigationWrapper } from '../../containers/NavigationWrapper';
@@ -28,17 +27,21 @@ export default function Profile() {
 
   const { id } = useParams();
 
-  async function getUser() {
-    await axios.get(`https://api.github.com/users/${id}`).then((response) => {
-      setName(response.data.name);
-      setUser(response.data.login);
-      setfollowers(response.data.followers);
-      setFollowing(response.data.following);
-      setAvatar(response.data.avatar_url);
-      setBio(response.data.bio);
-    });
-  }
-  getUser();
+  useEffect(() => {
+    async function fetchData() {
+      const result = await axios.get(`https://api.github.com/users/${id}`);
+
+      setName(result.data.name);
+      setUser(result.data.login);
+      setfollowers(result.data.followers);
+      setFollowing(result.data.following);
+      setAvatar(result.data.avatar_url);
+      setBio(result.data.bio);
+
+      return;
+    }
+    fetchData();
+  }, [id]);
 
   return (
     <ContentWrapper>
