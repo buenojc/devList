@@ -45,7 +45,7 @@ export default function Repositories() {
             {repoList.map((repo) => (
               <RepositoryHeader
                 github={repo.html_url}
-                details={`/details/${repo.name}`}
+                details={`/details/${repo.full_name}`}
                 repositoryName={repo.name}
                 language={repo.language}
                 value={repo.stargazers_count}
