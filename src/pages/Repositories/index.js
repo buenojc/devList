@@ -44,6 +44,7 @@ export default function Repositories() {
             <h2>{repoName}</h2>
             {repoList.map((repo) => (
               <RepositoryHeader
+                key={repo.id}
                 github={repo.html_url}
                 details={`/details/${repo.full_name}`}
                 repositoryName={repo.name}
