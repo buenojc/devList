@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
 import MainWrapper from '../../containers/MainWrapper';
 import Header from '../../containers/Header';
@@ -9,27 +11,36 @@ import { NavigationWrapper } from '../../containers/NavigationWrapper';
 import ReturnBtn from '../../components/ReturnBtn';
 import SearchBtn from '../../components/SearchBtn';
 
-function Details(props) {
+function Details() {
+  const { id, repo } = useParams();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(
+        `https://api.github.com/repos/${id}/${repo}`
+      );
+      setData(response.data);
+    }
+
+    fetchData();
+  }, [id]);
+
   return (
     <ContentWrapper>
       <Header />
       <MainWrapper>
         <Wrapper>
           <Title>
-            <Name>calculadora-js</Name>
+            <Name>{data.name}</Name>
             <div>
-              <StatsBadge value='50' icon={<FiStar />} />
-              <StatsBadge value='Javascript' />
+              <StatsBadge value={data.stargazers_count} icon={<FiStar />} />
+              <StatsBadge value={data.language} />
             </div>
           </Title>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo
-            quisquam quibusdam beatae reprehenderit dignissimos. Ad quam,
-            mollitia odio aspernatur possimus ab autem accusantium voluptates
-            ipsum, nam temporibus illo, sapiente corporis?
-          </p>
+          <p>{data.description}</p>
 
-          <a href={props.url} target='_blank'>
+          <a href={data.html_url} target='_blank'>
             Ver no Github
           </a>
 
