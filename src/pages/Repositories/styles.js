@@ -41,8 +41,9 @@ export const ListHeader = styled.div`
   display: flex;
   justify-content: center;
   background-color: #00938a;
-  padding: 20px 20px;
+  padding: 12px 20px;
   border-radius: 10px;
+  align-items: center;
 
   h1 {
     font-size: 18px;
