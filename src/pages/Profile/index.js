@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
@@ -45,6 +46,9 @@ export default function Profile() {
 
   return (
     <ContentWrapper>
+      <Helmet>
+        <title>Perfil de {id} | DevList</title>
+      </Helmet>
       <Header />
       <MainWrapper>
         <ImgWrapper>

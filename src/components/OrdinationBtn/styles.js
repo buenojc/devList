@@ -12,6 +12,12 @@ export const Wrapper = styled.div`
 
   &:hover {
     opacity: 0.2;
+
+    @media (max-width: 900px) {
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   svg + svg {

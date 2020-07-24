@@ -24,6 +24,7 @@ export const Name = styled.p`
     width: initial;
     padding: 0;
     margin: 20px 0;
+    text-align: center;
   }
 `;
 
@@ -43,7 +44,6 @@ export const NameWrapper = styled.div`
 
     a {
       display: block;
-      width: 100%;
     }
   }
 `;

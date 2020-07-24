@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useHistory } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
 import Header from '../../containers/Header';
@@ -17,6 +18,9 @@ export default function Home() {
 
   return (
     <ContentWrapper>
+      <Helmet>
+        <title>DevList</title>
+      </Helmet>
       <Header />
       <MainWrapper>
         <Title>

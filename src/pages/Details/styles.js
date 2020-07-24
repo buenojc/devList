@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
   & > p {
     margin-bottom: 60px;
-    text-align: justify;
+    text-align: center;
   }
 
   & > a {

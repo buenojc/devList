@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { ListWrapper, ListHeader, Ordination } from './styles';
@@ -37,6 +38,9 @@ export default function Repositories() {
 
   return (
     <ContentWrapper>
+      <Helmet>
+        <title>Repositórios de {id} | DevList</title>
+      </Helmet>
       <Header />
       <MainWrapper>
         <ListWrapper>
@@ -47,9 +51,9 @@ export default function Repositories() {
                 onClickBtn={() => changeSort()}
                 order={
                   sort === 'A' ? (
-                    <FaArrowDown size={18} />
-                  ) : (
                     <FaArrowUp size={18} />
+                  ) : (
+                    <FaArrowDown size={18} />
                   )
                 }
               />

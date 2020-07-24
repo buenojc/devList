@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ContentWrapper from '../../containers/ContentWrapper';
@@ -28,6 +29,9 @@ function Details() {
 
   return (
     <ContentWrapper>
+      <Helmet>
+        <title>{repo} | DevList</title>
+      </Helmet>
       <Header />
       <MainWrapper>
         <Wrapper>
@@ -40,7 +44,11 @@ function Details() {
               />
             </div>
           </Title>
-          <p>{data.description}</p>
+          <p>
+            {data.description === null
+              ? 'O repositório não conta com descrição'
+              : data.description}
+          </p>
 
           <a href={data.html_url} target='_blank'>
             Ver no Github
