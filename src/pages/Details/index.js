@@ -35,7 +35,9 @@ function Details() {
             <Name>{data.name}</Name>
             <div>
               <StatsBadge value={data.stargazers_count} icon={<FiStar />} />
-              <StatsBadge value={data.language} />
+              <StatsBadge
+                value={data.language === null ? 'Markdown' : data.language}
+              />
             </div>
           </Title>
           <p>{data.description}</p>
