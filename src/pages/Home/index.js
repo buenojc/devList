@@ -10,10 +10,16 @@ import Form from '../../components/Form';
 export default function Home() {
   const navigation = useHistory();
   const [id, setId] = useState('');
+  const regex = /^[a-z0-9_-]{0,}$/i;
 
   async function getId(e) {
     e.preventDefault();
-    navigation.push(`/profile/${id}`);
+
+    if (regex.test(id)) {
+      // const lowerCase = id.toLowerCase();
+      return navigation.push(`/profile/${id.toLowerCase()}`);
+    }
+    return console.log(`id inválido ${id}`);
   }
 
   return (

@@ -7,6 +7,7 @@ class Form extends React.Component {
       <FormWrapper onSubmit={this.props.submit}>
         <Label>{this.props.label}</Label>
         <Input
+          required
           type='text'
           placeholder={this.props.placeholder}
           onChange={this.props.change}
