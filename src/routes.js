@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Repositories from './pages/Repositories';
 import Details from './pages/Details';
+import notFound from './pages/NotFound';
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
         <Route path='/profile/:id' component={Profile} />
         <Route path='/repositories/:id' component={Repositories} />
         <Route path='/details/:id/:repo' component={Details} />
+        <Route component={notFound} />
       </Switch>
     </BrowserRouter>
   );
