@@ -16,7 +16,6 @@ export default function Home() {
     e.preventDefault();
 
     if (regex.test(id)) {
-      // const lowerCase = id.toLowerCase();
       return navigation.push(`/profile/${id.toLowerCase()}`);
     }
     return console.log(`id inválido ${id}`);
