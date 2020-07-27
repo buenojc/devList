@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GlobalStyles from './styles/reset.js';
-import Routes from './routes';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyles />
-    <Routes />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
